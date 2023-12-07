@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 878d9d1c02b8c43d8b7b2c4f3c554954
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
+    ClientStarter extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this.MultiplayerVariable.add_RoomJoined((room) => {\r\n           
+    console.log(\"================== Client: Room Joined ================\");\r\n           
+    this._room = room;\r\n            room.AddMessageHandler(\"SERVER_GREETING\",
+    (message) => {\r\n                console.log(\"================== Client: Server
+    Greeting Received ================\");\r\n                console.log(message);\r\n           
+    });\r\n            this._room.add_OnStateChange(this.OnStateChangeCallback.bind(this));\r\n       
+    });\r\n    }\r\n    SendGreetingToServer() {\r\n        console.log(\"==================
+    Send Greeting to Server ===================\");\r\n        this._room.Send(\"CLIENT_GREETING\",
+    \"Hi Server! I''m the Client!\");\r\n    }\r\n    SendCollectionCoinToServer()
+    {\r\n        console.log(\"================== Send Collection Coin to Server
+    ===================\");\r\n        this._room.Send(\"CLIENT_COLLECTION_COIN\",
+    10);\r\n    }\r\n    OnStateChangeCallback(state, isFirst) {\r\n        console.log(\"Coins
+    on Server: \" + state.collectionItems.coinsCount);\r\n    }\r\n}\r\nexports.default
+    = ClientStarter;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2xpZW50U3RhcnRlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNsaWVudFN0YXJ0ZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQSxpREFBcUQ7QUFHckQsTUFBcUIsYUFBYyxTQUFRLHFDQUFxQjtJQUs1RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLG1CQUFtQixnQkFBZSxDQUFDLElBQVcsRUFBRSxFQUFFO1lBQ25ELE9BQU8sQ0FBQyxHQUFHLENBQUMseURBQXlELENBQUMsQ0FBQztZQUV2RSxJQUFJLENBQUMsS0FBSyxHQUFHLElBQUksQ0FBQztZQUNsQixJQUFJLENBQUMsaUJBQWlCLENBQUMsaUJBQWlCLEVBQUUsQ0FBQyxPQUFnQixFQUFFLEVBQUU7Z0JBQzNELE9BQU8sQ0FBQyxHQUFHLENBQUMsc0VBQXNFLENBQUMsQ0FBQztnQkFDcEYsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUN6QixDQUFDLENBQUMsQ0FBQztZQUVILElBQUksQ0FBQyxLQUFLLG1CQUFrQixJQUFJLENBQUMscUJBQXFCLGFBQUM7UUFDM0QsQ0FBQyxFQUFBO0lBQ0wsQ0FBQztJQUVELG9CQUFvQjtRQUNoQixPQUFPLENBQUMsR0FBRyxDQUFDLGdFQUFnRSxDQUFDLENBQUM7UUFDOUUsSUFBSSxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsaUJBQWlCLEVBQUUsNEJBQTRCLENBQUMsQ0FBQztJQUNyRSxDQUFDO0lBRUQsMEJBQTBCO1FBQ3RCLE9BQU8sQ0FBQyxHQUFHLENBQUMsdUVBQXVFLENBQUMsQ0FBQztRQUNyRixJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyx3QkFBd0IsRUFBRSxFQUFFLENBQUMsQ0FBQztJQUNsRCxDQUFDO0lBRUQscUJBQXFCLENBQUMsS0FBWSxFQUFFLE9BQWdCO1FBQ2hELE9BQU8sQ0FBQyxHQUFHLENBQUMsbUJBQW1CLEdBQUcsS0FBSyxDQUFDLGVBQWUsQ0FBQyxVQUFVLENBQUMsQ0FBQztJQUN4RSxDQUFDO0NBQ0o7QUFoQ0QsZ0NBZ0NDIn0=","assetPath":"Assets/ClientStarter.ts","manifest":{"properties":[{"assembly":"ZEPETO.World","name":"MultiplayerVariable","type":"ZEPETO.World.ZepetoWorldMultiplay","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"ClientStarter","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 7d108ca73d864345bd74255da132f934
+  onlyWriteTrigger: 0
